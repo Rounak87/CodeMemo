@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="sticky top-0">
 
 <div className="absolute text-3xl font-bold sm:z-10 top-4 left-4 flex items-center space-x-1 ">
   <span className="text-gray-200 tracking-wide">Code</span>
