@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import {useDispatch} from "react-redux";
 import { addMemo ,updateMemo } from "../Redux/MemoSlice";
+import { Copy } from 'lucide-react';
+
 
 const Home = () => {
   const [Title, setTitle] = useState("");
@@ -33,11 +35,11 @@ const creatememo=()=>{
 
   return (
     <div>
-      <div className="flex justify-center mt-5 gap-4">
+      <div className="flex justify-center mt-5 gap-1 sm:gap-5">
         <div>
           <input
             type="text"
-            placeholder="Title"
+            placeholder="Enter Snippet Name"
             value={Title}
             onChange={(e) => setTitle(e.target.value)}
             className="border outline-none border-gray-400 py-3 pl-4 w-[200px] sm:w-[700px] mt-2 rounded-2xl bg-gray-800 text-white focus:outline-none "
@@ -55,7 +57,10 @@ const creatememo=()=>{
         <button 
         
         
-        className="  absolute z-10 cursor-pointer mt-4 right-4" >copy</button>
+        className="  absolute z-10 cursor-pointer mt-5 right-4" ><Copy
+        strokeWidth={1}
+        className="text-gray-300 hover:text-white"
+        /></button>
         <textarea
           value={Value}
           onChange={(e) => setValue(e.target.value)}
