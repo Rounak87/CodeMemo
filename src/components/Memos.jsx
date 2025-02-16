@@ -4,6 +4,7 @@ import { Pencil, Trash2, Eye, Copy, Calendar } from "lucide-react";
 import { deleteMemo, updateMemo } from "../Redux/MemoSlice";
 import { toast } from "react-hot-toast";
 import Date from "../utils/Formatdate";
+import { Link } from "react-router-dom";
 
 const Memos = () => {
   const memos = useSelector((state) => state.memo.memos);
@@ -72,7 +73,7 @@ const Memos = () => {
                           className="text-gray-300 sm:size-5 hover:text-white"
                         />
                       </button>
-                      <a href={`/viewMemos/${memo?._id}`}>
+                      <Link to={`/viewMemos/${memo?._id}`}>
                         <button className="cursor-pointer border border-gray-500 bg-gray-700 hover:bg-gray-600 p-1 rounded-lg flex items-center justify-center">
                           <Eye
                             size={15}
@@ -80,7 +81,7 @@ const Memos = () => {
                             className="text-gray-300 sm:size-5 hover:text-white"
                           />
                         </button>
-                      </a>
+                      </Link>
                       <button
                         onClick={() => handleCopy(memo?.content)}
                         className="cursor-pointer border border-gray-500 bg-gray-700 hover:bg-gray-600 p-1 rounded-lg flex items-center justify-center"
